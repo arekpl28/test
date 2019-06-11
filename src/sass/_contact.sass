@@ -1,0 +1,123 @@
+article.section6 
+  section 
+    div
+      &.contact-box
+        background-color: #000000
+        color: white
+        margin-bottom: 20px
+        &.info
+          order: 11
+        &.tommy
+          order: 21
+        &.kenneth, &.andreas
+          order: 31
+        &.espen
+          order: 41
+        &.mike, &.eva
+          order: 51
+        &.arne
+          order: 61
+        &.magnus, &.john
+          order: 71
+        &.resepsjon
+          order: 81
+        div.image
+          position: relative
+          width: 100%
+          height: 320px
+          overflow: hidden
+          img 
+            +image
+            +centering
+        div.wraper-box
+          padding: 20px
+          div.name
+            font-size: 26px
+          div.msg
+            font-size: 20px
+            padding: 15px 0
+          div.tel
+            font-size: 20px
+            padding: 15px 0
+          div.email
+            font-size: 20px
+            word-break: break-all
+            color: #1E7400
+            padding-bottom: 15px
+          form 
+            textarea
+              width: 100%
+              height: 100px
+              padding: 10px
+              margin-bottom: 10px
+            input 
+              width: 100%
+              padding: 10px
+            label
+              padding-top: 20px
+              display: flex
+              input.check
+                margin-right: 10px 
+                width: 10%
+                height: 50px
+              p 
+                flex-grow: 1
+                font-size: 14px
+                span 
+                  color: #1E7400
+            button
+              width: 100%
+              height: 50px
+              padding: 9px 22px
+              margin-top: 10px
+              font-size: 13px
+              color: white
+              background-color: #1E7400
+              border-color: #1E7400
+
+@media(min-width: 767px)
+  article.section6 
+    section 
+      div.contact-box
+        display: flex
+        width: 100%
+        margin-bottom:  20px
+        order: 99
+        div.image
+          height: 100%
+          width: 30vw
+        div.wraper-box
+          display: flex
+          flex-direction: row-reverse
+          padding: 30px 20px
+          div.info
+            width: 30vw
+
+            div.name
+              font-size: 26px
+            div.msg
+              font-size: 20px
+            div.tel
+              font-size: 20px
+            div.email
+              font-size: 20px
+              word-break: break-all
+              color: #1E7400
+              padding-bottom: 15px
+            form 
+              textarea
+                font-size: 15px
+                height: 150px
+                padding: 10px 20px
+              input 
+                font-size: 15px
+              label
+                padding-top: 20px
+                display: flex
+                input.check
+                  margin-right: 20px 
+                  width: 40px
+                p 
+                  font-size: 15px
+              button
+                font-size: 17px
