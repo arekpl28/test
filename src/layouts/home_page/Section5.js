@@ -7,39 +7,6 @@ import Art5 from "./articles/Art5.js";
 import Art6 from "./articles/Art6.js";
 import Square from "./articles/Square";
 
-// const arrArt = [
-//   {
-//     id: 0,
-//     name: Art1,
-//     active: true
-//   },
-//   {
-//     id: 1,
-//     name: Art2,
-//     active: false
-//   },
-//   {
-//     id: 2,
-//     name: Art3,
-//     active: false
-//   },
-//   {
-//     id: 3,
-//     name: Art4,
-//     active: false
-//   },
-//   {
-//     id: 4,
-//     name: Art5,
-//     active: false
-//   },
-//   {
-//     id: 5,
-//     name: Art6,
-//     active: false
-//   }
-// ];
-
 class Section5 extends Component {
   state = {
     isDown: false,
@@ -91,7 +58,64 @@ class Section5 extends Component {
     });
   };
 
+  handleMouseMove = e => {
+    const inner = window.innerWidth;
+    const innerX = ((inner / 2) * 100) / (inner + 110);
+    e.preventDefault();
+    if (this.state.isDown) {
+      let touch = e.pageX;
+      let scrollLeft = this.state.startX - touch;
+      // let touch = e.touches[0];
+      // let scrollLeft = this.state.startX - touch.pageX;
+      if (scrollLeft < 0) {
+        return;
+      }
+      if (scrollLeft < 10 && scrollLeft > 0) {
+        this.setState({
+          scrollLeft: 0,
+          number: 0
+        });
+      }
+      if (scrollLeft > 10 && scrollLeft < innerX) {
+        this.setState({
+          scrollLeft: 100,
+          number: 1
+        });
+      }
+      if (scrollLeft > 110 && scrollLeft < innerX * 2) {
+        this.setState({
+          scrollLeft: 200,
+          number: 2
+        });
+      }
+      if (scrollLeft > 210 && scrollLeft < innerX * 3) {
+        this.setState({
+          scrollLeft: 300,
+          number: 3
+        });
+      }
+      if (scrollLeft > 310 && scrollLeft < innerX * 4) {
+        this.setState({
+          scrollLeft: 400,
+          number: 4
+        });
+      }
+      if (scrollLeft > innerX * 5) {
+        this.setState({
+          scrollLeft: 500,
+          number: 5
+        });
+      }
+      this.setState({
+        scrollLeft: "-" + scrollLeft.toFixed()
+      });
+      this.changeSquare();
+    }
+  };
+
   handleMouseUp = () => {
+    const inner = window.innerWidth;
+    const innerX = ((inner / 2) * 100) / (inner + 110);
     if (this.state.scrollLeft > -10) {
       this.setState({
         scrollLeft: 0
@@ -99,27 +123,32 @@ class Section5 extends Component {
     }
     if (this.state.scrollLeft < -10) {
       this.setState({
-        scrollLeft: -100
+        scrollLeft: -innerX,
+        number: 1
       });
     }
-    if (this.state.scrollLeft < -110) {
+    if (this.state.scrollLeft < -(innerX * 2 + 10)) {
       this.setState({
-        scrollLeft: -200
+        scrollLeft: -(innerX * 2),
+        number: 2
       });
     }
-    if (this.state.scrollLeft < -210) {
+    if (this.state.scrollLeft < -(innerX * 3 + 10)) {
       this.setState({
-        scrollLeft: -300
+        scrollLeft: -(innerX * 3),
+        number: 3
       });
     }
-    if (this.state.scrollLeft < -310) {
+    if (this.state.scrollLeft < -(innerX * 4 + 10)) {
       this.setState({
-        scrollLeft: -400
+        scrollLeft: -(innerX * 4),
+        number: 4
       });
     }
-    if (this.state.scrollLeft < -410) {
+    if (this.state.scrollLeft < -(innerX * 5 + 10)) {
       this.setState({
-        scrollLeft: -500
+        scrollLeft: -(innerX * 5),
+        number: 5
       });
     }
     this.setState({
@@ -127,19 +156,6 @@ class Section5 extends Component {
     });
   };
 
-  handleMouseMove = e => {
-    e.preventDefault();
-    if (this.state.isDown) {
-      let touch = e.pageX;
-      let scrollLeft = this.state.startX - touch;
-      if (scrollLeft < 0) {
-        return;
-      }
-      this.setState({
-        scrollLeft: "-" + scrollLeft.toFixed()
-      });
-    }
-  };
   handleTouchStart = e => {
     clearInterval(this.indexInterval);
     const startX = e.touches[0].pageX;
@@ -147,6 +163,7 @@ class Section5 extends Component {
       startX: startX - this.state.scrollLeft
     });
   };
+
   handleTouchMove = e => {
     let touch = e.touches[0];
     let scrollLeft = this.state.startX - touch.pageX;
@@ -194,6 +211,7 @@ class Section5 extends Component {
       scrollLeft: "-" + scrollLeft.toFixed()
     });
   };
+
   handleTouchEnd = () => {
     if (this.state.scrollLeft > -10) {
       this.setState({
@@ -232,6 +250,7 @@ class Section5 extends Component {
       });
     }
   };
+
   changeSquare = () => {
     const activeSquare = this.state.arrArt.findIndex(
       square => square.active === true
@@ -257,15 +276,29 @@ class Section5 extends Component {
       arrArt: x
     });
   };
+
   componentDidMount() {
+    const inner = window.innerWidth;
+    const innerX = ((inner / 2) * 100) / (inner + 110);
     this.indexInterval = setInterval(() => {
-      this.setState(prevState => ({
-        scrollLeft: prevState.scrollLeft - 100
-      }));
-      if (this.state.scrollLeft === -600) {
-        this.setState({
-          scrollLeft: 0
-        });
+      if (inner < 1023) {
+        this.setState(prevState => ({
+          scrollLeft: prevState.scrollLeft - 100
+        }));
+        if (this.state.scrollLeft === -600) {
+          this.setState({
+            scrollLeft: 0
+          });
+        }
+      } else {
+        this.setState(prevState => ({
+          scrollLeft: prevState.scrollLeft - innerX
+        }));
+        if (this.state.number === 0) {
+          this.setState({
+            scrollLeft: 0
+          });
+        }
       }
       this.changeSquare();
       this.setState(prevState => ({
@@ -278,46 +311,88 @@ class Section5 extends Component {
       }
     }, 2000);
   }
+
   handleClick = id => {
-    if (id === 0) {
-      this.setState({
-        scrollLeft: 0,
-        number: id
-      });
+    const inner = window.innerWidth;
+    const innerX = ((inner / 2) * 100) / (inner + 110);
+    if (inner < 1025) {
+      if (id === 0) {
+        this.setState({
+          scrollLeft: 0,
+          number: id
+        });
+      }
+      if (id === 1) {
+        this.setState({
+          scrollLeft: -100,
+          number: id
+        });
+      }
+      if (id === 2) {
+        this.setState({
+          scrollLeft: -200,
+          number: id
+        });
+      }
+      if (id === 3) {
+        this.setState({
+          scrollLeft: -300,
+          number: id
+        });
+      }
+      if (id === 4) {
+        this.setState({
+          scrollLeft: -400,
+          number: id
+        });
+      }
+      if (id === 5) {
+        this.setState({
+          scrollLeft: -500,
+          number: id
+        });
+      }
+    } else {
+      if (id === 0) {
+        this.setState({
+          scrollLeft: 0,
+          number: id
+        });
+      }
+      if (id === 1) {
+        this.setState({
+          scrollLeft: -innerX,
+          number: id
+        });
+      }
+      if (id === 2) {
+        this.setState({
+          scrollLeft: -(innerX * 2),
+          number: id
+        });
+      }
+      if (id === 3) {
+        this.setState({
+          scrollLeft: -(innerX * 3),
+          number: id
+        });
+      }
+      if (id === 4) {
+        this.setState({
+          scrollLeft: -(innerX * 4),
+          number: id
+        });
+      }
+      if (id === 5) {
+        this.setState({
+          scrollLeft: -(innerX * 5),
+          number: id
+        });
+      }
     }
-    if (id === 1) {
-      this.setState({
-        scrollLeft: -100,
-        number: id
-      });
-    }
-    if (id === 2) {
-      this.setState({
-        scrollLeft: -200,
-        number: id
-      });
-    }
-    if (id === 3) {
-      this.setState({
-        scrollLeft: -300,
-        number: id
-      });
-    }
-    if (id === 4) {
-      this.setState({
-        scrollLeft: -400,
-        number: id
-      });
-    }
-    if (id === 5) {
-      this.setState({
-        scrollLeft: -500,
-        number: id
-      });
-    }
-    this.changeSquare1(id);
+    this.changeSquareClick(id);
   };
-  changeSquare1 = id => {
+  changeSquareClick = id => {
     clearInterval(this.indexInterval);
     const activeSquare = this.state.arrArt.findIndex(
       square => square.active === true

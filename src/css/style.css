@@ -375,24 +375,6 @@ article.section1 div.article-list a p {
 }
 
 @media (min-width: 767px) {
-  article.section1 {
-    padding: 40px 50px 0 50px;
-  }
-  article.section1 div.aktuelt h2 {
-    font-size: 3.5rem;
-    padding-bottom: 10px;
-  }
-  article.section1 div.article-list {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
   article.section1 div.article-list button {
     width: 200px;
     margin-right: 70%;
@@ -402,17 +384,13 @@ article.section1 div.article-list a p {
     -webkit-box-ordinal-group: 1;
         -ms-flex-order: 0;
             order: 0;
-  }
-  article.section1 div.article-list a {
-    width: 48%;
-    margin-bottom: 20px;
+    cursor: pointer;
   }
   article.section1 div.article-list a h3 {
     height: 70px;
   }
   article.section1 div.article-list a p {
     height: 70px;
-    padding-top: 0;
   }
 }
 
@@ -420,13 +398,11 @@ article.section1 div.article-list a p {
   article.section1 {
     padding: 0 50px 0 50px;
     margin-top: 40px;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: px solid rgba(0, 0, 0, 0.2);
   }
   article.section1 div.aktuelt {
     display: block;
-    width: 50%;
-    padding-top: 30px;
-    border-top: 0px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
   }
   article.section1 div.aktuelt h2 {
     font-size: 3.5rem;
@@ -507,6 +483,7 @@ article.section2 div.wraper div.les-mer div {
 article.section2 div.wraper div.les-mer button {
   padding: 8px 20px;
   margin-top: 20px;
+  width: 100px;
   font-size: 15px;
   color: white;
   background-color: #1E7400;
@@ -524,9 +501,6 @@ article.section2 div.wraper div.les-mer button {
   }
   article.section2 div.wraper div.digitale {
     padding: 0 10px;
-  }
-  article.section2 div.wraper div.les-mer button {
-    width: 100px;
   }
 }
 
@@ -683,22 +657,11 @@ article.section3 div.cours div div.wrapper button {
   article.section3 {
     padding: 50px;
   }
-  article.section3 h3 {
-    font-size: 28px;
-    padding: 30px 0;
-    font-weight: normal;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
-  }
   article.section3 div.cours {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -722,37 +685,6 @@ article.section3 div.cours div div.wrapper button {
         -ms-flex-positive: 0;
             flex-grow: 0;
     width: 49%;
-    background-color: #f9f9f9;
-    margin-bottom: 20px;
-    padding: 0 20px;
-  }
-  article.section3 div.cours div a {
-    display: block;
-    font-size: 20px;
-    padding-bottom: 20px;
-    text-decoration: none;
-    color: black;
-  }
-  article.section3 div.cours div div.wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    width: 100%;
-    padding: 0 0;
-  }
-  article.section3 div.cours div div.wrapper p {
-    width: 50%;
-    font-size: 14px;
-    padding: 5px 0 10px 0;
   }
   article.section3 div.cours div div.wrapper p:nth-of-type(even) {
     width: 70%;
@@ -773,9 +705,6 @@ article.section3 div.cours div div.wrapper button {
   }
   article.section3 div.cours div div.wrapper button {
     width: 150px;
-    font-size: 13px;
-    margin-top: 0;
-    margin-bottom: 0;
     margin-left: 70%;
     margin-right: 0;
   }
@@ -841,7 +770,7 @@ article.section4 div.job a h4 {
   font-weight: normal;
   padding: 15px;
   color: black;
-  background-color: #f7f7f7;
+  background-color: #f9f9f9;
 }
 
 article.section4 div.job p {
@@ -849,7 +778,7 @@ article.section4 div.job p {
   padding: 0 15px 15px;
   text-align: center;
   margin-bottom: 15px;
-  background-color: #f7f7f7;
+  background-color: #f9f9f9;
 }
 
 @media (min-width: 480px) {
@@ -938,51 +867,26 @@ article.section4 div.job p {
         -ms-flex-positive: 0;
             flex-grow: 0;
   }
-  article.section4 div.job a {
-    text-decoration: none;
-  }
-  article.section4 div.job a div.image {
-    position: relative;
-    height: 250px;
-    overflow: hidden;
-  }
-  article.section4 div.job a div.image img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    height: 100%;
-  }
   article.section4 div.job a h4 {
     height: 70px;
-    font-size: 20px;
-    font-weight: normal;
-    padding: 15px;
-    color: black;
-    background-color: #f7f7f7;
   }
   article.section4 div.job p {
     height: 100px;
-    font-size: 15px;
-    padding: 0 15px 15px;
-    text-align: center;
-    margin-bottom: 15px;
-    background-color: #f7f7f7;
   }
 }
 
 article.section5 {
   margin: 30px 0;
-  font-size: 15px;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
 article.section5 h3 {
-  margin: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0px 20px 20px;
+  padding-top: 30px;
   font-size: 2.8rem;
   font-weight: normal;
+  text-align: center;
 }
 
 article.section5 div.squares {
@@ -993,18 +897,19 @@ article.section5 div.squares {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 200px;
-  height: 10px;
+  height: 20px;
   margin: 30px auto 0;
 }
 
 article.section5 div.squares div.square {
-  height: 10px;
-  width: 10px;
-  background-color: #34495e;
+  height: 20px;
+  width: 20px;
+  background-color: #2e2d30;
+  border-radius: 20%;
 }
 
 article.section5 div.squares div.square.active {
-  background-color: #328812;
+  background-color: #1E7400;
 }
 
 article.section5 div.client {
@@ -1033,9 +938,22 @@ article.section5 div.client div.tak div.co {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   overflow-y: scroll;
-  padding: 10px 0px;
+  padding: 0 10px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+
+article.section5 div.client div.tak div.co.bodo p {
+  padding: 5px 0;
+}
+
+article.section5 div.client div.tak div.co.bodo ul {
+  padding-left: 20px;
+}
+
+article.section5 div.client div.tak div.co.bodo ul li {
+  font-size: 12px;
+  text-align: left;
 }
 
 article.section5 div.client div.tak div.co::-webkit-scrollbar {
@@ -1073,8 +991,8 @@ article.section5 div.client div.tak div.co:nth-of-type(6) {
 }
 
 article.section5 div.client div.tak div.co div.art {
-  background-color: #f7f7f7;
-  margin: 0 10px;
+  background-color: #f9f9f9;
+  margin: 0 20px;
   padding: 20px 10px;
 }
 
@@ -1084,14 +1002,99 @@ article.section5 div.client div.tak div.co div.art img {
 }
 
 article.section5 div.client div.tak div.co div.art div.text {
-  text-align: justify;
+  font-size: 2rem;
+  text-align: center;
+  font-style: italic;
 }
 
 article.section5 div.client div.tak div.co div.art div.author-infobox {
   text-align: center;
   color: #343434;
-  font-size: 10px;
+  font-size: 1rem;
   padding-top: 20px;
+}
+
+@media (min-width: 1023px) {
+  article.section5 {
+    width: 100%;
+    margin: 30px 0;
+    padding: 0 50px;
+    border-top: 0px solid rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  article.section5 h3 {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    padding-top: 30px;
+    font-size: 3.8rem;
+    font-weight: normal;
+    text-align: left;
+  }
+  article.section5 div.squares {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 200px;
+    height: 20px;
+    margin: 30px auto 0;
+  }
+  article.section5 div.squares div.square {
+    height: 20px;
+    width: 20px;
+    background-color: #2e2d30;
+    border-radius: 20%;
+  }
+  article.section5 div.squares div.square.active {
+    background-color: #1E7400;
+  }
+  article.section5 div.client {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 60vh;
+    overflow: auto;
+  }
+  article.section5 div.client div.tak {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  article.section5 div.client div.tak div.co {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(50vw - 50px);
+    height: 60vh;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    overflow-y: scroll;
+    padding: 0px 0px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  article.section5 div.client div.tak div.co div.art {
+    margin-left: 0;
+  }
+  article.section5 div.client div.tak div.co div.art div.text {
+    text-align: left;
+  }
+  article.section5 div.client div.tak div.co.bodo p {
+    padding: 5px 0;
+  }
+  article.section5 div.client div.tak div.co.bodo ul {
+    padding-left: 20px;
+  }
+  article.section5 div.client div.tak div.co.bodo ul li {
+    font-size: 16px;
+    text-align: left;
+  }
 }
 
 article.section6 {
@@ -1192,9 +1195,6 @@ article.section6 section button.contact.active {
     font-size: 35px;
   }
   article.section6 section {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -1255,7 +1255,7 @@ article.section6 section div.wraper {
   padding: 20px;
   margin-bottom: 1px;
   color: white;
-  background-color: black;
+  background-color: #2e2d30;
 }
 
 article.section6 section div.wraper form.suport label p {
@@ -1279,6 +1279,8 @@ article.section6 section div.wraper form.suport button {
   color: white;
   background-color: #1E7400;
   border-color: #1E7400;
+  border: 2px solid #1E7400;
+  cursor: pointer;
 }
 
 article.section6 section div.wraper a {
@@ -1293,7 +1295,7 @@ article.section6 section div.wraper a {
 article.section6 section div.info {
   padding: 0 20px;
   margin-bottom: 20px;
-  background-color: #000;
+  background-color: #2e2d30;
   color: white;
 }
 
@@ -1345,13 +1347,17 @@ article.section6 section div.info p span {
   }
 }
 
+article.section6 section div {
+  background-color: #2e2d30;
+}
+
 article.section6 section div.contact-box {
-  background-color: #000000;
   color: white;
   margin-bottom: 20px;
 }
 
 article.section6 section div.contact-box.info {
+  background-color: #2e2d30;
   -webkit-box-ordinal-group: 12;
       -ms-flex-order: 11;
           order: 11;

@@ -32,7 +32,7 @@ article.section1
           text-align: center
           padding: 15px 20px
           font-weight: normal
-          background-color: #f9f9f9
+          background-color: $gray
         h3 
           font-size: 20px
         p 
@@ -64,36 +64,24 @@ article.section1
 
 @media(min-width: 767px)
   article.section1
-    padding: 40px 50px 0 50px 
     div.aktuelt
-      h2
-        font-size: 3.5rem
-        padding-bottom: 10px
     div.article-list
-        flex-direction: row
-        flex-wrap: wrap
-        justify-content: space-between
         button
           +buttonPage
         a
-          width: 48%
-          margin-bottom: 20px
           h3 
             height: 70px
           p
             height: 70px
-            padding-top: 0
 
 @media(min-width: 1023px)
   article.section1
     padding: 0 50px 0 50px 
     margin-top: 40px
-    border-top: 1px solid rgba(0,0,0,0.2)
+    border-top: px solid rgba(0,0,0,0.2)
     div.aktuelt
       display: block
-      width: 50%
-      padding-top: 30px
-      border-top: 0px solid rgba(0,0,0,0.2)
+      width: 100%
       h2
         font-size: 3.5rem
         padding-bottom: 10px
