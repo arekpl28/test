@@ -937,7 +937,7 @@ article.section5 div.client div.tak div.co {
   height: 60vh;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 0 10px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -1005,6 +1005,10 @@ article.section5 div.client div.tak div.co div.art div.text {
   font-size: 2rem;
   text-align: center;
   font-style: italic;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 article.section5 div.client div.tak div.co div.art div.author-infobox {
@@ -1074,7 +1078,7 @@ article.section5 div.client div.tak div.co div.art div.author-infobox {
     height: 60vh;
     -ms-flex-negative: 0;
         flex-shrink: 0;
-    overflow-y: scroll;
+    overflow: auto;
     padding: 0px 0px;
     -webkit-transition: 0.3s;
     transition: 0.3s;
